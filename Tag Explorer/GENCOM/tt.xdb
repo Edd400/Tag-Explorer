@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-7-11-8:54:50" content="Fichier source bloc fonctions" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.61" dateTime="date_and_time#2018-6-21-17:11:50"></contentHeader>
+	<FBSource nameOfFBType="GENCOM_Switch" version="0.36" dateTime="dt#2018-07-11-08:53:53">
+		<attribute name="TypeCodeCheckSumString" value="AF66"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="90A1"></attribute>
+		<inputParameters>
+			<variables name="Index" typeName="INT">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Adresse_Eqt" typeName="STRING">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="Acquit" typeName="BOOL">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+		</inputParameters>
+		<inOutParameters>
+			<variables name="Token" typeName="INT">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+		</inOutParameters>
+		<outputParameters>
+			<variables name="Eqt_var" typeName="Switch">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Def_Com" typeName="BOOL">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="Fin_Com" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="Com_Act" typeName="BOOL">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="Nb_Ech" typeName="DINT">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+		</outputParameters>
+		<publicLocalVariables>
+			<variables name="Requetes" typeName="ARRAY[0..2] OF Request"></variables>
+      <variables name="Tabs_Gest" typeName="ARRAY[0..2] OF Tab_Gest_Com"></variables>
+			<variables name="Temps_Avant_Nouvel_Essai" typeName="TIME"></variables>
+			<variables name="Nb_Err_En_Cours" typeName="INT"></variables>
+		</publicLocalVariables>
+		<privateLocalVariables>
+			<variables name="InnerToken" typeName="INT"></variables>
+			<variables name="out" typeName="BOOL"></variables>
+			<variables name="Current_Def_Time" typeName="TIME"></variables>
+			<variables name="No_Com" typeName="BOOL"></variables>
+			<variables name="TON_DEF" typeName="TON"></variables>
+			<variables name="Fin_Tempo_Defaut" typeName="BOOL"></variables>
+		</privateLocalVariables>
+		<FBProgram name="Read">
+			<STSource>If(Index = Token and not Def_Com) then 
+(*Requête n°0 , Lecture de 8 Mots à partir de %MW4096 *)
+If(InnerToken = 0 and not Requetes[0].Act) then
+
+	READ_VAR(ADR:= ADDM(Adresse_Eqt)(*ANY_ARRAY_INT *),
+		OBJ:= '%MW'(*STRING *),
+		NUM:= 4096(*DINT *),
+		NB:= 8(*INT *),
+		GEST:= Tabs_Gest[0](*ANY_ARRAY_INT *),
+		RECP =&gt; tab_recep_0(*ANY_ARRAY_INT *));
+	InnerToken := InnerToken + 1;
+End_if;
+(*Fin de la requête n°0 *)
+
+(*Requête n°1 , Lecture de 11 Mots à partir de %MW80 *)
+If(InnerToken = 1 and  Requetes[0].End and not Requetes[1].Act) then
+	READ_VAR(ADR:= ADDM(Adresse_Eqt)(*ANY_ARRAY_INT *),
+		OBJ:= '%MW'(*STRING *),
+		NUM:= 80(*DINT *),
+		NB:= 11(*INT *),
+		GEST:= Tabs_Gest[1](*ANY_ARRAY_INT *),
+		RECP =&gt; tab_recep_1(*ANY_ARRAY_INT *));
+	InnerToken := InnerToken + 1;
+End_if;
+(*Fin de la requête n°1 *)
+
+
+End_If; 
+
+
+(*COntrôle fin de com*)
+Fin_Com :=  Com_Act and not  Requetes[0].Act and not  Requetes[1].Act; 
+
+(*Contrôle COm en cours*)
+Com_Act := Requetes[0].Act or Requetes[1].Act; 
+
+if(Tabs_Gest[0][0] &lt;&gt; 0) then Requetes[0].Def_Com := 1; else Requetes[0].Def_Com := 0; end_if;
+
+If (Fin_Com) then InnerToken := 0; Token := Token + 1; end_if; 
+
+
+</STSource>
+		</FBProgram>
+		<FBProgram name="CONV">
+			<STSource>eqt_var.Etat_Port1 := tab_recep_0[0];
+eqt_var.Etat_Port2 := tab_recep_0[1];
+eqt_var.Etat_Port3 := tab_recep_0[2];
+eqt_var.Etat_Port4 := tab_recep_0[3];
+eqt_var.Etat_Port5 := tab_recep_0[4];
+eqt_var.Etat_Port6 := tab_recep_0[5];
+eqt_var.Etat_Port7 := tab_recep_0[6];
+eqt_var.Etat_Port8 := tab_recep_0[7];
+eqt_var.Serial := tab_recep_1[0];
+eqt_var.Power1 := tab_recep_1[8];
+eqt_var.Power2 := tab_recep_1[9];
+eqt_var.Fault := tab_recep_1[10];
+</STSource>
+		</FBProgram>
+		<FBProgram name="Defaut">
+			<STSource>If(Acquit) then 
+	InnerToken := 0; 
+	Def_Com := 0;
+end_if;
+
+if(Requetes[0].Def_Com or Requetes[1].Def_Com) then Nb_Err_En_Cours := Nb_Err_En_Cours + 1 ; else Nb_Err_En_Cours := 0; end_if;
+
+if(Nb_Err_En_Cours &gt;5) then Def_Com := 1; end_if;
+
+TON_DEF (IN := Def_Com(*BOOL*),
+       PT := T#120s(*TIME*),
+       Q =&gt; Fin_Tempo_Defaut(*BOOL*),
+       ET =&gt; Temps_Avant_Nouvel_Essai(*TIME*));
+
+if(TON_DEF.Q) then Def_Com := 0; end_if;
+</STSource>
+		</FBProgram>
+		<FBProgram name="Write">
+			<STSource>
+			</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="Switch" version="0.06" dateTime="dt#2018-06-06-14:19:47">
+		<attribute name="TypeSignatureCheckSumString" value="15D7"></attribute>
+		<structure>
+			<variables name="Etat_Port1" typeName="INT"></variables>
+			<variables name="Etat_Port2" typeName="INT"></variables>
+			<variables name="Etat_Port3" typeName="INT"></variables>
+			<variables name="Etat_Port4" typeName="INT"></variables>
+			<variables name="Etat_Port5" typeName="INT"></variables>
+			<variables name="Etat_Port6" typeName="INT"></variables>
+			<variables name="Etat_Port7" typeName="INT"></variables>
+			<variables name="Etat_Port8" typeName="INT"></variables>
+			<variables name="Serial" typeName="INT"></variables>
+			<variables name="Power1" typeName="INT"></variables>
+			<variables name="Power2" typeName="INT"></variables>
+			<variables name="Fault" typeName="INT"></variables>
+			<variables name="Gest_Word" typeName="WORD"></variables>
+			<variables name="Def_Com" typeName="BOOL">
+				<attribute name="ExtractBit" value="0"></attribute>
+			</variables>
+			<variables name="Act_Com" typeName="BOOL">
+				<attribute name="ExtractBit" value="1"></attribute>
+			</variables>
+			<variables name="NB_Ech" typeName="BOOL">
+				<attribute name="ExtractBit" value="2"></attribute>
+			</variables>
+			<variables name="Fin_Com" typeName="DINT"></variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="Request" version="0.07" dateTime="dt#2018-07-11-08:51:19">
+		<attribute name="TypeSignatureCheckSumString" value="A3DD"></attribute>
+		<structure>
+			<variables name="Begin" typeName="DINT"></variables>
+			<variables name="Length" typeName="INT"></variables>
+			<variables name="ID" typeName="INT"></variables>
+			<variables name="Act" typeName="BOOL"></variables>
+			<variables name="End" typeName="BOOL"></variables>
+			<variables name="Def_Com" typeName="BOOL"></variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="Tab_Gest_Com" version="0.00" dateTime="dt#2018-06-06-14:53:31">
+		<attribute name="TypeSignatureCheckSumString" value="0C55"></attribute>
+		<array>ARRAY[0..3] OF INT</array>
+	</DDTSource>
+</FBExchangeFile>

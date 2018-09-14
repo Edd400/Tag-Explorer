@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-5-16-11:13:12" content="Fichier source ST" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.000"></contentHeader>
+	<program>
+		<identProgram name="Recopie_ST" type="section" task="MAST"></identProgram>
+		<STSource>
+    
+
+</STSource>
+	</program>
+	<dataBlock>
+		
+	</dataBlock>
+</STExchangeFile>

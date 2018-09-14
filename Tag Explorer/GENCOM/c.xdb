@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-5-31-10:22:22" content="Fichier source bloc fonctions" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.235" dateTime="date_and_time#2017-5-4-16:49:13"></contentHeader>
+	<FBSource nameOfFBType="TOR_SEPAM" version="0.29" dateTime="dt#2017-05-03-14:56:02">
+		<attribute name="TypeCodeCheckSumString" value="C640"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="3D1E"></attribute>
+		<inputParameters>
+			<variables name="SW_TOR_COM" typeName="SW_TOR_COM_SEPAM">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Type_SEPAM" typeName="INT">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="A_ES_Disj_Ferme" typeName="BOOL">
+				<attribute name="PositionPin" value="14"></attribute>
+			</variables>
+			<variables name="Delestage" typeName="BOOL">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="Defaut_com" typeName="BOOL">
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="Protect_cabl" typeName="BOOL">
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="Protect_cabl_non_acq" typeName="BOOL">
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="A_Cond_Enc" typeName="BOOL">
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+			<variables name="A_ES_TC10" typeName="BOOL">
+				<attribute name="PositionPin" value="11"></attribute>
+			</variables>
+			<variables name="A_Def_Disc" typeName="BOOL">
+				<attribute name="PositionPin" value="12"></attribute>
+			</variables>
+			<variables name="A_ES_Cell_Indisp" typeName="BOOL">
+				<attribute name="PositionPin" value="13"></attribute>
+			</variables>
+			<variables name="A_ES_Enclench" typeName="BOOL">
+				<attribute name="PositionPin" value="15"></attribute>
+			</variables>
+			<variables name="B_ES_Declench" typeName="BOOL">
+				<attribute name="PositionPin" value="26"></attribute>
+			</variables>
+			<variables name="JBD_Pres_Tension" typeName="BOOL">
+				<attribute name="PositionPin" value="30"></attribute>
+			</variables>
+			<variables name="Coup_Disj_Ouverts" typeName="BOOL">
+				<attribute name="PositionPin" value="31"></attribute>
+			</variables>
+			<variables name="Def_com_wago" typeName="BOOL">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="A_DefDisj" typeName="BOOL">
+				<attribute name="PositionPin" value="18"></attribute>
+			</variables>
+			<variables name="B_DefDisj" typeName="BOOL">
+				<attribute name="PositionPin" value="28"></attribute>
+			</variables>
+			<variables name="A_BascEnCours" typeName="BOOL">
+				<attribute name="PositionPin" value="17"></attribute>
+			</variables>
+			<variables name="B_BascEnCours" typeName="BOOL">
+				<attribute name="PositionPin" value="27"></attribute>
+			</variables>
+			<variables name="B_Def_Disc" typeName="BOOL">
+				<attribute name="PositionPin" value="22"></attribute>
+			</variables>
+			<variables name="B_ES_Enclench" typeName="BOOL">
+				<attribute name="PositionPin" value="25"></attribute>
+			</variables>
+			<variables name="A_ES_Declench" typeName="BOOL">
+				<attribute name="PositionPin" value="16"></attribute>
+			</variables>
+			<variables name="B_Cond_Enc" typeName="BOOL">
+				<attribute name="PositionPin" value="20"></attribute>
+			</variables>
+			<variables name="B_ES_TC12" typeName="BOOL">
+				<attribute name="PositionPin" value="21"></attribute>
+			</variables>
+			<variables name="Def_Sync" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="B_ES_Cell_Indisp" typeName="BOOL">
+				<attribute name="PositionPin" value="23"></attribute>
+			</variables>
+			<variables name="B_ES_Disj_Ferme" typeName="BOOL">
+				<attribute name="PositionPin" value="24"></attribute>
+			</variables>
+		</inputParameters>
+		<inOutParameters>
+			<variables name="CW" typeName="WORD">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+		</inOutParameters>
+		<outputParameters>
+			<variables name="Disj_A_Ferm" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="Disj_B_Ferm" typeName="BOOL">
+				<attribute name="PositionPin" value="12"></attribute>
+			</variables>
+			<variables name="A_SF6" typeName="BOOL">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="B_SF6" typeName="BOOL">
+				<attribute name="PositionPin" value="13"></attribute>
+			</variables>
+			<variables name="A_Debroche" typeName="BOOL">
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="B_Debroche" typeName="BOOL">
+				<attribute name="PositionPin" value="14"></attribute>
+			</variables>
+			<variables name="A_Distance" typeName="BOOL">
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="B_Distance" typeName="BOOL">
+				<attribute name="PositionPin" value="15"></attribute>
+			</variables>
+			<variables name="A_Def_Alim_mot" typeName="BOOL">
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="B_Def_Alim_mot" typeName="BOOL">
+				<attribute name="PositionPin" value="16"></attribute>
+			</variables>
+			<variables name="A_O2" typeName="BOOL">
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+			<variables name="B_O206" typeName="BOOL">
+				<attribute name="PositionPin" value="17"></attribute>
+			</variables>
+			<variables name="SW_TOR" typeName="SW_TOR_SEPAM">
+				<attribute name="PositionPin" value="25"></attribute>
+			</variables>
+			<variables name="TC_Encl" typeName="BOOL">
+				<attribute name="PositionPin" value="30"></attribute>
+			</variables>
+			<variables name="TC_Decl" typeName="BOOL">
+				<attribute name="PositionPin" value="31"></attribute>
+			</variables>
+			<variables name="TC_Basc" typeName="BOOL">
+				<attribute name="PositionPin" value="32"></attribute>
+			</variables>
+			<variables name="DefAlimCCEG01" typeName="BOOL">
+				<attribute name="PositionPin" value="20"></attribute>
+			</variables>
+			<variables name="DefAlimCCEG02" typeName="BOOL">
+				<attribute name="PositionPin" value="21"></attribute>
+			</variables>
+			<variables name="DefAlimFlaps" typeName="BOOL">
+				<attribute name="PositionPin" value="22"></attribute>
+			</variables>
+			<variables name="TC_Protect_cabl_ack_def" typeName="BOOL">
+				<attribute name="PositionPin" value="27"></attribute>
+			</variables>
+			<variables name="A_TC_Encl" typeName="BOOL">
+				<attribute name="PositionPin" value="28"></attribute>
+			</variables>
+			<variables name="B_TC_Encl" typeName="BOOL">
+				<attribute name="PositionPin" value="29"></attribute>
+			</variables>
+			<variables name="Pont_Debroche" typeName="BOOL">
+				<attribute name="PositionPin" value="19"></attribute>
+			</variables>
+			<variables name="IndispoTP" typeName="BOOL">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="SectTerreFerme" typeName="BOOL">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="FonctProtectSEPAM" typeName="BOOL">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="O105" typeName="BOOL"></variables>
+			<variables name="A_motArme" typeName="BOOL"></variables>
+			<variables name="B_motArme" typeName="BOOL"></variables>
+			<variables name="TP_0" typeName="TP"></variables>
+		</privateLocalVariables>
+		<FBProgram name="Recopie_TOR">
+			<STSource>(* Type SEPAM
+Atelier, type =1
+FID, type =2
+FIA, type =3
+JDB, type = 4
+Pompes, type = 5
+Couplage, type =6
+ONE, type =7
+GTA, type =8
+GES, type =9
+TGBT, type =10*)
+
+(*Init avec Recopie *)
+SW_TOR.A:=SW_TOR.B:=SW_TOR.C:=SW_TOR.S:=SW_TOR.Protect:=0;
+
+if type_SEPAM =1 then
+(*Cellule Départ Atelier *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I1.7;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I1.3;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.4:= Delestage;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.6:= Protect_cabl;
+SW_TOR.C.7:=Protect_cabl_non_acq;
+SW_TOR.C.9:=Def_com_wago;
+
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+
+TP_0 (IN := CW.5(*BOOL*),
+      PT := T#3s (*TIME*),
+      Q =&gt; TC_Protect_cabl_ack_def(*BOOL*));
+
+
+SW_TOR.Protect.0:=SW_TOR_COM.Protect3221.0; (* Protection 27N *)
+SW_TOR.Protect.1:=SW_TOR_COM.Protect3221.12; (* Protection 59N *)
+SW_TOR.Protect.2:=SW_TOR_COM.Protect3222.2; (* Protection 67N *)
+SW_TOR.Protect.3:=SW_TOR_COM.Protect3220.8; (* Protection 50N/51N *)
+SW_TOR.Protect.4:=SW_TOR_COM.Protect3220.0; (* Protection 50/51 *)
+
+end_if;
+
+if type_SEPAM =2 then
+(*Cellule Départ Filtration FIDA/FIDB *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I1.7;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.9;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I1.3;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.4:= Delestage;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.9:=Def_com_wago;
+
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+
+SW_TOR.Protect.0:=SW_TOR_COM.Protect3221.0; (* Protection 27N *)
+SW_TOR.Protect.1:=SW_TOR_COM.Protect3221.12; (* Protection 59N *)
+SW_TOR.Protect.2:=SW_TOR_COM.Protect3222.2; (* Protection 67N *)
+SW_TOR.Protect.3:=SW_TOR_COM.Protect3220.8; (* Protection 50N/51N *)
+SW_TOR.Protect.4:=SW_TOR_COM.Protect3220.0; (* Protection 50/51 *)
+
+end_if;
+
+if type_SEPAM =3 then
+(*Cellule Arrivée Filtration FIAA/FIAB *)
+SW_TOR.A.0:= Disj_A_Ferm:=SW_TOR_COM.I1.0;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I1.7;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I1.3;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.C.0:=IndispoTP:=NOT SW_TOR_COM.I1.9;
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+
+
+
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+
+end_if;
+
+
+if type_SEPAM =4 then
+(* Cellule JDB *)
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+
+SW_TOR.C.0:=IndispoTP:=NOT SW_TOR_COM.I1.9;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.9:=Def_com_wago;
+
+SW_TOR.S.14:= JBD_Pres_Tension;
+
+end_if;
+
+
+if type_SEPAM =5 then
+(*Cellule Depart Pompe *)
+SW_TOR.A.0:=Disj_A_Ferm:=SW_TOR_COM.I1.0;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.0;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.14:= A_DefDisj ;
+
+
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+
+end_if;
+
+if type_SEPAM =6 then
+(*Cellule Couplage *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.0;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.14:= A_DefDisj ;
+
+
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I2.2;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.9:=Def_com_wago;
+
+SW_TOR.S.7:= Coup_Disj_Ouverts;
+SW_TOR.S.8:=Pont_Debroche:=SW_TOR_COM.I1.9;
+SW_TOR.S.9:=DefAlimCCEG01:=SW_TOR_COM.I2.7;
+SW_TOR.S.10:=DefAlimCCEG02:=SW_TOR_COM.I2.6;
+SW_TOR.S.11:=DefAlimFlaps:=SW_TOR_COM.I2.8;
+
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+
+end_if;
+
+
+
+if type_SEPAM =7 then
+(* Cellule Dos à Dos Arrivée ONE *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.0;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I2.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.13:= A_BascEnCours ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.B.0:= B_ES_Disj_Ferme;
+SW_TOR.B.1:=B_SF6:=SW_TOR_COM.I2.4;
+SW_TOR.B.2:=B_Debroche:=SW_TOR_COM.I1.9;
+SW_TOR.B.3:=B_Distance:=NOT SW_TOR_COM.I2.3;
+SW_TOR.B.4:=B_Def_Alim_Mot:=NOT SW_TOR_COM.I2.13;
+SW_TOR.B.5:=B_O206:=SW_TOR_COM.O3.5;
+SW_TOR.B.6:=B_motArme:=SW_TOR_COM.I2.5;
+SW_TOR.B.7:= B_Cond_Enc;
+SW_TOR.B.8:= B_ES_TC12 ;
+SW_TOR.B.9:= B_Def_Disc ;
+SW_TOR.B.10:= B_ES_Cell_Indisp ;
+SW_TOR.B.11:= B_ES_Enclench ;
+SW_TOR.B.12:= B_ES_Declench ;
+SW_TOR.B.13:= B_BascEnCours ;
+SW_TOR.B.14:= B_DefDisj ;
+
+SW_TOR.C.0:=IndispoTP:=NOT SW_TOR_COM.I1.13;
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.8:= Def_Sync;
+SW_TOR.C.9:=Def_com_wago;
+
+TC_Basc:=CW.0;
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+A_TC_Encl:= CW.3;
+B_TC_Encl:= CW.4;
+
+
+
+SW_TOR.Protect.3:=SW_TOR_COM.Protect3220.8; (* Protection 50N/51N *)
+SW_TOR.Protect.4:=SW_TOR_COM.Protect3220.0; (* Protection 50/51 *)
+SW_TOR.Protect.5:=SW_TOR_COM.Protect3222.2; (* Protection 67N *)
+SW_TOR.Protect.6:=SW_TOR_COM.Protect3223.1; (* Protection 49RMS *)
+
+
+end_if;
+
+if type_SEPAM =8 then
+(* Cellule Dos à Dos Arrivée GTA1 / GTA2 *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.0;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.13:= A_BascEnCours ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.B.0:= B_ES_Disj_Ferme;
+SW_TOR.B.1:=B_SF6:=SW_TOR_COM.I2.4;
+SW_TOR.B.2:=B_Debroche:=SW_TOR_COM.I1.9;
+SW_TOR.B.3:=B_Distance:=NOT SW_TOR_COM.I2.3;
+SW_TOR.B.4:=B_Def_Alim_Mot:=NOT SW_TOR_COM.I1.13;
+SW_TOR.B.5:=B_O206:=SW_TOR_COM.O3.5;
+SW_TOR.B.6:=B_motArme:=SW_TOR_COM.I2.5;
+SW_TOR.B.7:= B_Cond_Enc;
+SW_TOR.B.8:= B_ES_TC12 ;
+SW_TOR.B.9:= B_Def_Disc ;
+SW_TOR.B.10:= B_ES_Cell_Indisp ;
+SW_TOR.B.11:= B_ES_Enclench ;
+SW_TOR.B.12:= B_ES_Declench ;
+SW_TOR.B.13:= B_BascEnCours ;
+SW_TOR.B.14:= B_DefDisj ;
+
+SW_TOR.C.0:=IndispoTP:=NOT SW_TOR_COM.I2.9;
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.8:= Def_Sync;
+SW_TOR.C.9:=Def_com_wago;
+
+TC_Basc:=CW.0;
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+A_TC_Encl:= CW.3;
+B_TC_Encl:= CW.4;
+
+
+SW_TOR.Protect.1:=SW_TOR_COM.Protect3221.12; (* Protection 59N *)
+SW_TOR.Protect.2:=SW_TOR_COM.Protect3222.2; (* Protection 67N *)
+SW_TOR.Protect.3:=SW_TOR_COM.Protect3220.8; (* Protection 50N/51N *)
+SW_TOR.Protect.4:=SW_TOR_COM.Protect3220.0; (* Protection 50/51 *)
+SW_TOR.Protect.5:=SW_TOR_COM.Protect3222.2; (* Protection 67N *)
+SW_TOR.Protect.6:=SW_TOR_COM.Protect3223.1; (* Protection 49RMS *)
+
+end_if;
+
+if type_SEPAM =9 then
+(* Cellule Dos à Dos Arrivée GES *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.8;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I1.12;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.13:= A_BascEnCours ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.B.0:= B_ES_Disj_Ferme;
+SW_TOR.B.1:=B_SF6:=SW_TOR_COM.I2.4;
+SW_TOR.B.2:=B_Debroche:=SW_TOR_COM.I1.9;
+SW_TOR.B.3:=B_Distance:=NOT SW_TOR_COM.I2.3;
+SW_TOR.B.4:=B_Def_Alim_Mot:=NOT SW_TOR_COM.I1.13;
+SW_TOR.B.5:=B_O206:=SW_TOR_COM.O3.5;
+SW_TOR.B.6:=B_motArme:=SW_TOR_COM.I2.5;
+SW_TOR.B.7:= B_Cond_Enc;
+SW_TOR.B.8:= B_ES_TC12 ;
+SW_TOR.B.9:= B_Def_Disc ;
+SW_TOR.B.10:= B_ES_Cell_Indisp ;
+SW_TOR.B.11:= B_ES_Enclench ;
+SW_TOR.B.12:= B_ES_Declench ;
+SW_TOR.B.13:= B_BascEnCours ;
+SW_TOR.B.14:= B_DefDisj ;
+
+SW_TOR.C.0:=IndispoTP:=NOT SW_TOR_COM.I2.9;
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.11;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.8:= Def_Sync;
+SW_TOR.C.9:=Def_com_wago;
+
+TC_Basc:=CW.0;
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+A_TC_Encl:= CW.3;
+B_TC_Encl:= CW.4;
+
+end_if;
+	
+
+
+if type_SEPAM =10 then
+(* Cellule Dos à Dos Depart TGBT TGBT1/TGBT2 *)
+SW_TOR.A.0:= A_ES_Disj_Ferme;
+SW_TOR.A.1:=A_SF6:=SW_TOR_COM.I1.4;
+SW_TOR.A.2:=A_Debroche:=SW_TOR_COM.I1.10;
+SW_TOR.A.3:=A_Distance:=NOT SW_TOR_COM.I2.0;
+SW_TOR.A.4:=A_Def_Alim_Mot:=NOT SW_TOR_COM.I2.6;
+SW_TOR.A.5:=A_O2:=SW_TOR_COM.O1.1;
+SW_TOR.A.6:=A_motArme:=SW_TOR_COM.I2.1;
+SW_TOR.A.7:= A_Cond_Enc;
+SW_TOR.A.8:= A_ES_TC10 ;
+SW_TOR.A.9:= A_Def_Disc ;
+SW_TOR.A.10:= A_ES_Cell_Indisp ;
+SW_TOR.A.11:= A_ES_Enclench ;
+SW_TOR.A.12:= A_ES_Declench ;
+SW_TOR.A.13:= A_BascEnCours ;
+SW_TOR.A.14:= A_DefDisj ;
+
+SW_TOR.B.0:= B_ES_Disj_Ferme;
+SW_TOR.B.1:=B_SF6:=SW_TOR_COM.I2.4;
+SW_TOR.B.2:=B_Debroche:=SW_TOR_COM.I1.9;
+SW_TOR.B.3:=B_Distance:=NOT SW_TOR_COM.I2.3;
+SW_TOR.B.4:=B_Def_Alim_Mot:=NOT SW_TOR_COM.I2.7;
+SW_TOR.B.5:=B_O206:=SW_TOR_COM.O3.5;
+SW_TOR.B.6:=B_motArme:=SW_TOR_COM.I2.5;
+SW_TOR.B.7:= B_Cond_Enc;
+SW_TOR.B.8:= B_ES_TC12 ;
+SW_TOR.B.9:= B_Def_Disc ;
+SW_TOR.B.10:= B_ES_Cell_Indisp ;
+SW_TOR.B.11:= B_ES_Enclench ;
+SW_TOR.B.12:= B_ES_Declench ;
+SW_TOR.B.13:= B_BascEnCours ;
+SW_TOR.B.14:= B_DefDisj ;
+
+SW_TOR.C.1:=SectTerreFerme:=SW_TOR_COM.I1.13;
+SW_TOR.C.2:=FonctProtectSEPAM:=NOT SW_TOR_COM.O1.4;
+SW_TOR.C.3:=O105:=SW_TOR_COM.O2.4;
+SW_TOR.C.5:= Defaut_com;
+SW_TOR.C.8:= Def_Sync;
+SW_TOR.C.9:=Def_com_wago;
+
+
+SW_TOR.S.0 := SW_TOR_COM.I1.11 ; (*Disj Aval Ouvert *)
+SW_TOR.S.1 := SW_TOR_COM.I2.8  ; (*Decl Transfo Thermo *)
+SW_TOR.S.2 := SW_TOR_COM.I2.9  ; (*Decl Transfo Pression *)
+SW_TOR.S.3 := SW_TOR_COM.I2.10 ; (*Decl Transfo Niv Gaz *)
+SW_TOR.S.4 := SW_TOR_COM.I2.12 ; (*Alarme Temp Transfo *)
+
+TC_Basc:=CW.0;
+TC_Encl:= CW.1;
+TC_Decl:= CW.2;
+A_TC_Encl:= CW.3;
+B_TC_Encl:= CW.4;
+
+end_if;
+
+
+(*Remise à Zéro TC*)
+CW:=0;
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="SW_TOR_COM_SEPAM" version="0.06" dateTime="dt#2017-05-03-11:16:41">
+		<attribute name="TypeSignatureCheckSumString" value="E2E0"></attribute>
+		<structure>
+			<variables name="I1" typeName="INT"></variables>
+			<variables name="I2" typeName="INT"></variables>
+			<variables name="O1" typeName="INT"></variables>
+			<variables name="O2" typeName="INT"></variables>
+			<variables name="O3" typeName="INT"></variables>
+			<variables name="Protect3220" typeName="INT"></variables>
+			<variables name="Protect3221" typeName="INT"></variables>
+			<variables name="Protect3222" typeName="INT"></variables>
+			<variables name="Protect3223" typeName="INT"></variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="SW_TOR_SEPAM" version="0.06" dateTime="dt#2017-05-03-14:22:02">
+		<attribute name="TypeSignatureCheckSumString" value="C00F"></attribute>
+		<structure>
+			<variables name="C" typeName="WORD"></variables>
+			<variables name="A" typeName="WORD"></variables>
+			<variables name="B" typeName="WORD"></variables>
+			<variables name="S" typeName="WORD"></variables>
+			<variables name="Protect" typeName="WORD"></variables>
+		</structure>
+	</DDTSource>
+	<FBSource nameOfFBType="MES_PPES_SEPAM" version="0.04" dateTime="dt#2016-01-20-15:41:27">
+		<attribute name="TypeCodeCheckSumString" value="272B"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="16C1"></attribute>
+		<inputParameters>
+			<variables name="SW_MES_Ppes" typeName="SW_MES_PPES_SEPAM">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="T1" typeName="INT">
+				<attribute name="PositionPin" value="17"></attribute>
+			</variables>
+			<variables name="T2" typeName="INT">
+				<attribute name="PositionPin" value="18"></attribute>
+			</variables>
+			<variables name="T3" typeName="INT">
+				<attribute name="PositionPin" value="19"></attribute>
+			</variables>
+			<variables name="T4" typeName="INT">
+				<attribute name="PositionPin" value="20"></attribute>
+			</variables>
+			<variables name="T5" typeName="INT">
+				<attribute name="PositionPin" value="21"></attribute>
+			</variables>
+			<variables name="T6" typeName="INT">
+				<attribute name="PositionPin" value="22"></attribute>
+			</variables>
+			<variables name="Cpt_marche" typeName="INT">
+				<attribute name="PositionPin" value="23"></attribute>
+			</variables>
+		</outputParameters>
+	</FBSource>
+	<DDTSource DDTName="SW_MES_PPES_SEPAM" version="0.01" dateTime="dt#2016-01-20-15:37:10">
+		<attribute name="TypeSignatureCheckSumString" value="8E14"></attribute>
+		<structure>
+			<variables name="T1" typeName="INT"></variables>
+			<variables name="T2" typeName="INT"></variables>
+			<variables name="T3" typeName="INT"></variables>
+			<variables name="T4" typeName="INT"></variables>
+			<variables name="T5" typeName="INT"></variables>
+			<variables name="T6" typeName="INT"></variables>
+			<variables name="Cpt_marche" typeName="INT"></variables>
+		</structure>
+	</DDTSource>
+	<FBSource nameOfFBType="COM_SEPAM" version="0.34" dateTime="dt#2017-05-09-16:46:28">
+		<attribute name="TypeCodeCheckSumString" value="A413"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="D7EE"></attribute>
+		<inputParameters>
+			<variables name="Adresse" typeName="ADDR_TYPE">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Type_SEPAM" typeName="INT">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="Index_SEPAM" typeName="INT">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="P_MAE" typeName="REAL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="CosFi_MAE" typeName="REAL">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="Freq_MAE" typeName="REAL">
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="Tps_Marche" typeName="UDINT">
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+		</inputParameters>
+		<inOutParameters>
+			<variables name="Index_Com" typeName="INT">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+		</inOutParameters>
+		<outputParameters>
+			<variables name="SW_MES" typeName="SW_MES_SEPAM">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="SW_MES_Pompes" typeName="SW_MES_PPES_SEPAM">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="SW_TOR" typeName="SW_TOR_COM_SEPAM">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="Com_active" typeName="BOOL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="Defaut_com" typeName="BOOL">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="Status_Req" typeName="ARRAY[0..3] OF INT"></variables>
+			<variables name="Req_MES_1_SEPAM" typeName="ARRAY[512..561] OF INT"></variables>
+			<variables name="Etape" typeName="INT"></variables>
+			<variables name="Nb_def_Test" typeName="INT"></variables>
+			<variables name="Req_MES_Ppes_SEPAM" typeName="ARRAY[768..797] OF INT"></variables>
+			<variables name="Req_TOR_SEPAM" typeName="ARRAY[3088..3106] OF INT"></variables>
+			<variables name="ERREUR_COM" typeName="BOOL"></variables>
+			<variables name="ERREUR_COM_MEMO" typeName="BOOL"></variables>
+			<variables name="TOF_Def_com_memo" typeName="TOF"></variables>
+			<variables name="TP_SEPAM_suivant" typeName="TP"></variables>
+			<variables name="Req_MES_2_SEPAM" typeName="ARRAY[584..591] OF INT"></variables>
+			<variables name="Req_PROTECT_SEPAM" typeName="ARRAY[3220..3223] OF INT"></variables>
+		</privateLocalVariables>
+		<FBProgram name="Com">
+			<STSource>(* Type SEPAM
+Atelier, type =1
+FID, type =2
+FIA, type =3
+JDB, type = 4
+Pompes, type = 5
+Couplage, type =6
+ONE, type =7
+GTA, type =8
+GES, type =9
+TGBT, type =10*)
+
+IF Index_SEPAM = Index_Com Then
+SET (Com_active);
+end_if;
+
+if Com_active then
+	IF not ERREUR_COM_MEMO  Then
+	Status_Req[2]:=30;
+		IF Etape=0 AND NOT Status_Req[0].0 THEN 
+	(*lecture Zone Mesure*)
+		READ_VAR(Adresse,'%MW',512,50,Status_Req,Req_MES_1_SEPAM);
+			IF Status_Req[0].0 THEN 
+			Etape:=1; 
+			END_IF;
+		END_IF;
+		
+		IF Etape=1 and NOT Status_Req[0].0 and Status_Req[1]=0 Then
+		(*Pas Defaut com *)
+		RESET (ERREUR_COM);
+		Etape:=2;
+		END_if;
+
+		IF Etape=1 and NOT Status_Req[0].0 and Status_Req[1]&lt;&gt;0 Then
+		(*Defaut com *)
+		Nb_def_Test:= Nb_def_Test+1;
+		Etape:=10;
+		END_if;
+
+		IF Etape=2 AND NOT Status_Req[0].0 THEN 
+	(*lecture Zone Mesure*)
+		READ_VAR(Adresse,'%MW',584,8,Status_Req,Req_MES_2_SEPAM);
+			IF Status_Req[0].0 THEN 
+			Etape:=3; 
+			END_IF;
+		END_IF;
+		
+		IF Etape=3 and NOT Status_Req[0].0 and Status_Req[1]=0 Then
+		(*Pas Defaut com *)
+		RESET (ERREUR_COM);
+			if type_SEPAM= 5 then (* SEPAM Pompes *)
+			Etape:=4;
+			Else
+			Etape:=6;
+			End_if;
+		END_if;
+
+		IF Etape=3 and NOT Status_Req[0].0 and Status_Req[1]&lt;&gt;0 Then
+		(*Defaut com *)
+		Nb_def_Test:= Nb_def_Test+1;
+		Etape:=10;
+		END_if;
+
+		IF Etape=4 AND NOT Status_Req[0].0 THEN 
+	(*lecture Zone Mesure Pompes *)
+		IF type_SEPAM= 5 THEN
+			READ_VAR(Adresse,'%MW',768,30,Status_Req,Req_MES_Ppes_SEPAM);
+			IF Status_Req[0].0 THEN Etape:=5; END_IF;
+		ELSE Etape:=6; END_IF;
+		END_IF;
+
+		IF Etape=5 and NOT Status_Req[0].0 and Status_Req[1]=0 Then
+		(*Pas Defaut com *)
+		RESET (ERREUR_COM);
+		Etape:=6;
+		END_if;
+
+		IF Etape=5 and NOT Status_Req[0].0 and Status_Req[1]&lt;&gt;0 Then
+		(*Pas Defaut com *)
+		Nb_def_Test:= Nb_def_Test+1;
+		Etape:=10;
+		END_if;
+
+		IF Etape=6 AND NOT Status_Req[0].0 THEN 
+	(*lecture Zone TOR *)
+		READ_VAR(Adresse,'%MW',3088,19,Status_Req,Req_TOR_SEPAM);
+		IF Status_Req[0].0 THEN Etape:=7; END_IF;
+		END_IF;
+
+		IF Etape=7 and NOT Status_Req[0].0 and Status_Req[1]=0 Then
+		(*Pas Defaut com *)
+		RESET (ERREUR_COM);
+		Etape:=8;
+		END_if;
+
+		IF Etape=7 and NOT Status_Req[0].0 and Status_Req[1]&lt;&gt;0 Then
+		(*Pas Defaut com *)
+		Nb_def_Test:= Nb_def_Test+1;
+		Etape:=10;
+		END_if;
+	
+		IF Etape=8 AND NOT Status_Req[0].0 THEN 
+	(*lecture Zone Protection SEPAM *)
+		READ_VAR(Adresse,'%MW',3220,4,Status_Req,Req_PROTECT_SEPAM);
+		IF Status_Req[0].0 THEN Etape:=9; END_IF;
+		END_IF;
+
+		IF Etape=9 and NOT Status_Req[0].0 and Status_Req[1]=0 Then
+		(*Pas Defaut com *)
+		RESET (ERREUR_COM);
+		Etape:=10;
+		END_if;
+
+		IF Etape=9 and NOT Status_Req[0].0 and Status_Req[1]&lt;&gt;0 Then
+		(*Pas Defaut com *)
+		Nb_def_Test:= Nb_def_Test+1;
+		Etape:=10;
+		END_if;
+
+		If Etape=10 then
+		Index_Com := Index_Com +1;
+		RESET (Com_active);
+		Etape :=0;
+		end_if;
+	ELSE
+	Index_Com := Index_Com +1; 
+	END_IF;
+END_IF;
+
+If Nb_def_Test &gt;=5 THEN 
+SET (ERREUR_COM);
+SET (ERREUR_COM_MEMO);
+END_if;
+
+
+TOF_Def_com_memo (IN := ERREUR_COM_MEMO,
+                  PT := T#120s);
+
+If TOF_Def_com_memo.Q then
+Nb_def_Test:=0;
+RESET (ERREUR_COM_MEMO);
+end_if;
+
+(* Recopie Defaut Com *)
+(*Defaut_com:= ERREUR_COM;*)
+</STSource>
+		</FBProgram>
+		<FBProgram name="Recopie_MES">
+			<STSource>(* Type SEPAM
+Atelier, type =1
+FID, type =2
+FIA, type =3
+JDB, type = 4
+Pompes, type = 5
+Couplage, type =6
+ONE, type =7
+GTA, type =8
+GES, type =9
+TGBT, type =10*)
+
+(* Recopie Mesure SEPAM *)
+
+SW_MES.I1 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[512],Req_MES_1_SEPAM[513]));
+SW_MES.I2 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[514],Req_MES_1_SEPAM[515]));
+SW_MES.I3 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[516],Req_MES_1_SEPAM[517]));
+
+SW_MES.U21 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[534],Req_MES_1_SEPAM[535]));
+SW_MES.U32 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[536],Req_MES_1_SEPAM[537]));
+SW_MES.U13 := DINT_TO_UDINT(INT_AS_DINT(Req_MES_1_SEPAM[538],Req_MES_1_SEPAM[539]));
+
+
+
+
+SW_MES.Q := INT_AS_DINT(Req_MES_1_SEPAM[556],Req_MES_1_SEPAM[557]);
+SW_MES.S := INT_AS_DINT(Req_MES_1_SEPAM[558],Req_MES_1_SEPAM[559]);
+
+
+SW_MES.E_act_pos := DINT_TO_UDINT(INT_AS_DINT(Req_MES_2_SEPAM[584],Req_MES_2_SEPAM[585]));
+SW_MES.E_act_neg := DINT_TO_UDINT(INT_AS_DINT(Req_MES_2_SEPAM[586],Req_MES_2_SEPAM[587]));
+SW_MES.E_react_pos := DINT_TO_UDINT(INT_AS_DINT(Req_MES_2_SEPAM[588],Req_MES_2_SEPAM[589]));
+SW_MES.E_react_neg := DINT_TO_UDINT(INT_AS_DINT(Req_MES_2_SEPAM[590],Req_MES_2_SEPAM[591]));
+SW_MES.Tps_Marche:=Tps_Marche;
+
+
+if (type_SEPAM= 5 OR type_SEPAM= 3 OR type_SEPAM= 6)then  (* Type Pompes ou Arrivee Filtration ou Couplage *)
+SW_MES.P := DINT_TO_REAL (INT_AS_DINT(Req_MES_1_SEPAM[554],Req_MES_1_SEPAM[555]))/10000.0; (* Conversion en MW *)
+ELSE
+SW_MES.P := P_MAE;
+END_IF;
+
+If type_SEPAM= 4 then (* Type JDB *)
+SW_MES.Frequence := Freq_MAE * 100.0;
+ELSE
+SW_MES.Frequence := DINT_TO_REAL(INT_AS_DINT(Req_MES_1_SEPAM[552],Req_MES_1_SEPAM[553]));
+END_IF;
+
+If (type_SEPAM= 4 or type_SEPAM= 7) then (* Type ONE *)
+SW_MES.cosFI := cosFi_MAE * 100.0;
+ELSE
+SW_MES.cosFI := DINT_TO_REAL(INT_AS_DINT(Req_MES_1_SEPAM[560],Req_MES_1_SEPAM[561]));
+END_if;
+
+(* Recopie Mesure Pompes SEPAM *)
+if type_SEPAM= 5 then
+SW_MES_Pompes.T1 := Req_MES_Ppes_SEPAM[768];
+SW_MES_Pompes.T2 := Req_MES_Ppes_SEPAM[769];
+SW_MES_Pompes.T3 := Req_MES_Ppes_SEPAM[770];
+SW_MES_Pompes.T4 := Req_MES_Ppes_SEPAM[771];
+SW_MES_Pompes.T5 := Req_MES_Ppes_SEPAM[772];
+SW_MES_Pompes.T6 := Req_MES_Ppes_SEPAM[773];
+SW_MES_Pompes.Cpt_marche := Req_MES_Ppes_SEPAM[797];
+Else
+SW_MES_Pompes.T1 := 0;
+SW_MES_Pompes.T2 := 0;
+SW_MES_Pompes.T3 := 0;
+SW_MES_Pompes.T4 := 0;
+SW_MES_Pompes.T5 := 0;
+SW_MES_Pompes.T6 := 0;
+SW_MES_Pompes.Cpt_marche := 0;
+end_if;
+
+(*Recopie carte Entrees Sorties SEPAM*)
+SW_TOR.I1:= Req_TOR_SEPAM[3088];
+SW_TOR.I2:= Req_TOR_SEPAM[3089];
+SW_TOR.O1:= Req_TOR_SEPAM[3104];
+SW_TOR.O2:= Req_TOR_SEPAM[3105];
+SW_TOR.O3:= Req_TOR_SEPAM[3106];
+
+SW_TOR.Protect3220:=Req_PROTECT_SEPAM[3220];
+SW_TOR.Protect3221:=Req_PROTECT_SEPAM[3221];
+SW_TOR.Protect3222:=Req_PROTECT_SEPAM[3222];
+SW_TOR.Protect3223:=Req_PROTECT_SEPAM[3223];
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="SW_MES_SEPAM" version="0.06" dateTime="dt#2017-05-03-17:52:04">
+		<attribute name="TypeSignatureCheckSumString" value="FF4D"></attribute>
+		<structure>
+			<variables name="I1" typeName="UDINT"></variables>
+			<variables name="I2" typeName="UDINT"></variables>
+			<variables name="I3" typeName="UDINT"></variables>
+			<variables name="U21" typeName="UDINT"></variables>
+			<variables name="U32" typeName="UDINT"></variables>
+			<variables name="U13" typeName="UDINT"></variables>
+			<variables name="Frequence" typeName="REAL"></variables>
+			<variables name="P" typeName="REAL"></variables>
+			<variables name="Q" typeName="DINT"></variables>
+			<variables name="S" typeName="DINT"></variables>
+			<variables name="CosFi" typeName="REAL"></variables>
+			<variables name="E_act_pos" typeName="UDINT"></variables>
+			<variables name="E_act_neg" typeName="UDINT"></variables>
+			<variables name="E_react_pos" typeName="UDINT"></variables>
+			<variables name="E_react_neg" typeName="UDINT"></variables>
+			<variables name="Tps_Marche" typeName="UDINT"></variables>
+		</structure>
+	</DDTSource>
+	<FBSource nameOfFBType="MES_SEPAM" version="0.05" dateTime="dt#2017-05-03-17:52:04">
+		<attribute name="TypeCodeCheckSumString" value="272B"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="B626"></attribute>
+		<inputParameters>
+			<variables name="SW_MES" typeName="SW_MES_SEPAM">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Type_SEPAM" typeName="INT">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="P_EANA" typeName="REAL">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="I1" typeName="UDINT">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="I2" typeName="UDINT">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="I3" typeName="UDINT">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="U21" typeName="UDINT">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="U32" typeName="UDINT">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="U13" typeName="UDINT">
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="P" typeName="DINT">
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="Q" typeName="DINT">
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+			<variables name="S" typeName="DINT">
+				<attribute name="PositionPin" value="11"></attribute>
+			</variables>
+			<variables name="CosFi" typeName="DINT">
+				<attribute name="PositionPin" value="12"></attribute>
+			</variables>
+			<variables name="E_act_pos" typeName="UDINT">
+				<attribute name="PositionPin" value="13"></attribute>
+			</variables>
+			<variables name="E_act_neg" typeName="UDINT">
+				<attribute name="PositionPin" value="14"></attribute>
+			</variables>
+			<variables name="E_react_pos" typeName="UDINT">
+				<attribute name="PositionPin" value="15"></attribute>
+			</variables>
+			<variables name="E_react_neg" typeName="UDINT">
+				<attribute name="PositionPin" value="16"></attribute>
+			</variables>
+			<variables name="Frequence" typeName="DINT">
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+		</outputParameters>
+	</FBSource>
+</FBExchangeFile>

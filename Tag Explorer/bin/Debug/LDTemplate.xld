@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LDExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-5-15-10:30:29" content="Fichier source LD" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.000"></contentHeader>
+	<program>
+		<identProgram name="Recopie" type="section" task="MAST"></identProgram>
+		<LDSource nbColumns="11">
+			<networkLD>
+				
+			</networkLD>
+		</LDSource>
+	</program>
+	<dataBlock>
+		
+	</dataBlock>
+</LDExchangeFile>

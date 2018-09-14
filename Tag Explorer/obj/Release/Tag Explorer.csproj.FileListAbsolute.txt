@@ -1,0 +1,16 @@
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Release\Tag Explorer.exe.config
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Release\Tag Explorer.exe
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Release\Tag Explorer.pdb
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.csproj.ResolveComReference.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.CreateVariables.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.DataTypeEditor.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.Form1.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.Popup_auto_assign.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.Popup_feuillecs.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.Properties.Resources.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag_Explorer.Select_Fields_Unity.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.csproj.GenerateResource.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.csproj.CoreCompileInputs.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.exe
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.pdb
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Release\Tag Explorer.csprojResolveAssemblyReference.cache

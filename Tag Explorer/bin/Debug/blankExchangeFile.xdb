@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-6-6-15:8:47" content="Fichier source bloc fonctions" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.1" dateTime="date_and_time#2018-6-1-16:36:39"></contentHeader>
+
+  <DDTSource DDTName="Request" version="0.07" dateTime="dt#2018-07-11-08:51:19">
+    <attribute name="TypeSignatureCheckSumString" value="A3DD"></attribute>
+    <structure>
+      <variables name="Begin" typeName="DINT"></variables>
+      <variables name="Length" typeName="INT"></variables>
+      <variables name="ID" typeName="INT"></variables>
+      <variables name="Act" typeName="BOOL"></variables>
+      <variables name="End" typeName="BOOL"></variables>
+      <variables name="Def_Com" typeName="BOOL"></variables>
+    </structure>
+  </DDTSource>
+  <DDTSource DDTName="Tab_Gest_Com" version="0.00" dateTime="dt#2018-06-06-14:53:31">
+    <attribute name="TypeSignatureCheckSumString" value="0C55"></attribute>
+    <array>ARRAY[0..3] OF INT</array>
+  </DDTSource>
+</FBExchangeFile>

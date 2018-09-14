@@ -1,0 +1,101 @@
+﻿def UpdateFile(Horodatage, Type):
+	import system
+	
+	NomFichier1 = 'C:/Pour_Ignition/Notif_POI/ficheGP.rtf'
+	NomFichier2 = 'C:/Pour_Ignition/Notif_POI/ficheGP_0.rtf'
+	fichier1 = open(NomFichier1,'r')
+	fichier2 = open(NomFichier2,'w')
+	
+	# Lecture heure systeme
+	date_courante = system.tag.read('[System]Gateway/CurrentDateTime').value
+	date_emis = system.db.dateFormat(date_courante, "dd/MM/yyyy HH:mm")
+	
+	Date = system.db.dateFormat(date_courante, "dd/MM/yyyy")
+	Heure = system.db.dateFormat(date_courante, "HH:mm:ss")
+	
+	for ligne in fichier1.readlines():
+		if 'date_message'in ligne :
+			result=ligne.replace("date_message", date_emis)
+			fichier2.write(result)
+		else :
+			if 'jour_alm'in ligne :
+				result=ligne.replace("jour_alm", Date)
+				fichier2.write(result)
+			else :
+				if 'heure_alm'in ligne :
+					result=ligne.replace("heure_alm", Heure)
+					fichier2.write(result)
+				else :
+					if 'type_alm'in ligne :
+						result=ligne.replace("type_alm", Type)
+						fichier2.write(result)
+					else :
+						fichier2.write(ligne)	
+	
+	fichier1.close()
+	fichier2.close()
+	
+	exec_ok=1
+	
+	return exec_ok
+	
+	
+	
+def SendFax() :
+	import system
+	import fpmi
+	
+	smtp="smtp.gmail.com:587:tls"
+	fromAddr="alkion.lavera@gmail.com"
+	myuser = "alkion.lavera@gmail.com"
+	mypass = "mensylbc"
+	#recipients = ["0972199725@ecofax.fr"]
+	
+
+
+	subject= "0465010443"
+	body = "password:VO4SnLri"
+	
+	filePath = "c:\\Pour_Ignition\\Notif_POI\\FicheGP_0.rtf"
+	fileName = "FicheGP_0.rtf"
+	fileData = fpmi.file.readFileAsBytes(filePath)
+	
+	try :
+		ok = 0
+		system.net.sendEmail(smtp, fromAddr, subject, body, 0, to=recipients, username=myuser, password=mypass,AttachmentNames=[fileName],AttachmentData=[fileData])
+	except :
+		ok = 1
+	
+	return ok
+	
+	
+	
+def SendMail() :
+	import system
+	import fpmi
+		
+	smtp="smtp.gmail.com:587:tls"
+	fromAddr="alkion.lavera@gmail.com"
+	myuser = "alkion.lavera@gmail.com"
+	mypass = "mensylbc"
+	recipients = ["geraldine.dolera@d2cm.net"]
+	#recipients = ["jean-marie.hersin@developpement-durable.gouv.fr","Thibault.laurent@developpement-durable.gouv.fr","Patrick.couturier@developpement-durable.gouv.fr","h-gomard@lbctt.com","p-bourdet@lbctt.com","geraldine.dolera@d2cm.net"]
+	
+
+	
+	subject= "Notification d'alerte POI du site ALKION LAVERA"
+	body = "<html>Bonjour,<br>Ceci est une notification d'alerte POI du site ALKION LAVERA.<br>Cf. Fiche GP jointe"
+		
+	filePath = "c:\\Pour_Ignition\\Notif_POI\\FicheGP_0.rtf"
+	fileName = "FicheGP_0.rtf"
+	fileData = fpmi.file.readFileAsBytes(filePath)
+		
+	try :
+		ok = 0
+		system.net.sendEmail(smtp, fromAddr, subject, body, 1, to=recipients, username=myuser, password=mypass,AttachmentNames=[fileName],AttachmentData=[fileData])
+	except :
+		ok = 1
+		
+	return ok
+
+

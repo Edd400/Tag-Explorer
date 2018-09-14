@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Unity Pro XL V11.1 - 160831F" dateTime="date_and_time#2018-6-6-15:8:47" content="Fichier source bloc fonctions" DTDVersion="41"></fileHeader>
+	<contentHeader name="Projet" version="0.0.1" dateTime="date_and_time#2018-6-1-16:36:39"></contentHeader>
+	<FBSource nameOfFBType="Eqt_1" version="0.13" dateTime="dt#2018-06-06-14:59:12">
+		<attribute name="TypeCodeCheckSumString" value="9BD0"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="9F23"></attribute>
+		<inputParameters>
+			<variables name="Index" typeName="DINT">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="Adresse_Eqt" typeName="STRING">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="Type_Addr" typeName="STRING">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="Token" typeName="INT">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="Eqt_var" typeName="Eqt_1_var">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<publicLocalVariables>
+			<variables name="Requetes" typeName="ARRAY[0..10] OF Request"></variables>
+		</publicLocalVariables>
+		<privateLocalVariables>
+      <variables name="Tabs_Gest" typeName="ARRAY[0..10] OF Tab_Gest_Com"></variables>
+		</privateLocalVariables>
+		<FBProgram name="Read">
+			<STSource>
+          if(Type_Addr = 'ADDM') then
+          READ_VAR (ADR := ADDM(Adresse_Eqt)(*ANY_ARRAY_INT*),
+          OBJ := '%MW'(*STRING*),
+          NUM := Requetes[0].Begin(*DINT*),
+          NB := Requetes[0].Length(*INT*),
+          GEST := Tabs_Gest[0](*ANY_ARRAY_INT*),
+          RECP = tab_recep_0(*ANY_ARRAY_INT*));
+          end_if;
+</STSource>
+		</FBProgram>
+		<FBProgram name="Write">
+			<STSource>
+			</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="Eqt_1_var" version="0.06" dateTime="dt#2018-06-06-14:19:47">
+		<attribute name="TypeSignatureCheckSumString" value="5673"></attribute>
+		<structure>
+			
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="Request" version="0.06" dateTime="dt#2018-06-06-14:59:12">
+		<attribute name="TypeSignatureCheckSumString" value="94B6"></attribute>
+		<structure>
+			<variables name="Begin" typeName="DINT"></variables>
+			<variables name="Length" typeName="INT"></variables>
+			<variables name="ID" typeName="INT"></variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="Tab_Gest_Com" version="0.00" dateTime="dt#2018-06-06-14:53:31">
+		<attribute name="TypeSignatureCheckSumString" value="0C55"></attribute>
+		<array>ARRAY[0..3] OF INT</array>
+	</DDTSource>
+</FBExchangeFile>

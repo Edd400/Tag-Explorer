@@ -1,0 +1,34 @@
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.exe.config
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.exe
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.pdb
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csprojResolveAssemblyReference.cache
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Form1.resources
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Properties.Resources.resources
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.GenerateResource.cache
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.CoreCompileInputs.cache
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.exe
+c:\users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.pdb
+c:\Users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.ResolveComReference.cache
+c:\Users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Select_Fields_Unity.resources
+c:\Users\eddye\source\repos\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Popup_feuillecs.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.exe.config
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.exe
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Debug\Tag Explorer.pdb
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.ResolveComReference.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Form1.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Popup_feuillecs.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Properties.Resources.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Select_Fields_Unity.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.GenerateResource.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.CoreCompileInputs.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.exe
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.pdb
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.Popup_auto_assign.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.CreateVariables.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.DataTypeEditor.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csprojResolveAssemblyReference.cache
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Debug\EasyModbus.dll
+D:\Travaux en cours\Tag Explorer\Tag Explorer\bin\Debug\Modbus.Core.dll
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag Explorer.csproj.CopyComplete
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.PopupModbus.resources
+D:\Travaux en cours\Tag Explorer\Tag Explorer\obj\Debug\Tag_Explorer.GENCOM_Popup.resources

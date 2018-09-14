@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTable>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="exportData" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="exportData">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="Comment_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="Type_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="Sup_Address_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="API_Addr_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="COM_Field" type="xs:string" minOccurs="0" />
+                <xs:element name="Parent" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+    <DocumentElement>
+      <exportData diffgr:id="exportData1" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+        <Name_Field>Serial</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}</Sup_Address_Field>
+        <COM_Field>%MW80</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData2" msdata:rowOrder="1" diffgr:hasChanges="inserted">
+        <Name_Field>Power1</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+1</Sup_Address_Field>
+        <COM_Field>%MW88</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData3" msdata:rowOrder="2" diffgr:hasChanges="inserted">
+        <Name_Field>Power2</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+2</Sup_Address_Field>
+        <COM_Field>%MW89</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData4" msdata:rowOrder="3" diffgr:hasChanges="inserted">
+        <Name_Field>Fault</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+3</Sup_Address_Field>
+        <COM_Field>%MW90</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData5" msdata:rowOrder="4" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port1</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+4</Sup_Address_Field>
+        <COM_Field>%MW4096</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData6" msdata:rowOrder="5" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port2</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+5</Sup_Address_Field>
+        <COM_Field>%MW4097</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData7" msdata:rowOrder="6" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port3</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+6</Sup_Address_Field>
+        <COM_Field>%MW4098</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData8" msdata:rowOrder="7" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port4</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+7</Sup_Address_Field>
+        <COM_Field>%MW4099</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData9" msdata:rowOrder="8" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port5</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+8</Sup_Address_Field>
+        <COM_Field>%MW4100</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData10" msdata:rowOrder="9" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port6</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+9</Sup_Address_Field>
+        <COM_Field>%MW4101</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData11" msdata:rowOrder="10" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port7</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+10</Sup_Address_Field>
+        <COM_Field>%MW4102</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData12" msdata:rowOrder="11" diffgr:hasChanges="inserted">
+        <Name_Field>Etat_Port8</Name_Field>
+        <Type_Field>int</Type_Field>
+        <Sup_Address_Field>{Offset}+11</Sup_Address_Field>
+        <COM_Field>%MW4103</COM_Field>
+        <Parent>Switch</Parent>
+      </exportData>
+      <exportData diffgr:id="exportData13" msdata:rowOrder="12" diffgr:hasChanges="inserted" />
+    </DocumentElement>
+  </diffgr:diffgram>
+</DataTable>

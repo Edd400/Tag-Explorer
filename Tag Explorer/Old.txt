@@ -1,0 +1,391 @@
+﻿public static class GETEX
+    {
+        public static FBExchangeFile DFBs { get; set; }
+        public static Log log { get; set; }
+        public static List<long> AdressesCouvertes { get; set; }
+        public static List<string> AdressesAVerif { get; set; }
+        public static List<int> RequetesUtilisee { get; set; }
+
+
+        public static void InitializeVariables()
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.DefaultExt = ".xdb";
+            openFile.Filter = "FBExchange File | *.xdb";
+
+            if (openFile.ShowDialog().Equals(DialogResult.OK))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(FBExchangeFile));
+
+                using (StreamReader reader = new StreamReader(openFile.OpenFile()))
+                {
+                    DFBs = xs.Deserialize(reader) as FBExchangeFile;
+                }
+            }
+
+            log = new Log();
+            AdressesAVerif = new List<string>();
+            AdressesCouvertes = new List<long>();
+            RequetesUtilisee = new List<int>();
+
+
+
+        }
+        public static void CheckAdresses(DataGridView data)
+        {
+            //try
+            //{
+            #region Vars
+            int ColumnIndex_Tab_M_R = 0;
+            int RowIndex_Tab_M_R = 0;
+
+            int ColumnIndex_Tab_M_L = 0;
+            int RowIndex_Tab_M_L = 0;
+
+            int ColumnIndex_Tab_M_ECR = 0;
+            int RowIndex_Tab_M_ECR = 0;
+
+
+            int ColumnIndex_Tab_B_R = 0;
+            int RowIndex_Tab_B_R = 0;
+
+            int ColumnIndex_Tab_B_L = 0;
+            int RowIndex_Tab_B_L = 0;
+
+            int ColumnIndex_Tab_B_ECR = 0;
+            int RowIndex_Tab_B_ECR = 0;
+            string name = "";
+
+            FBExchangeFileFBSource FBtest;
+            #endregion
+
+            #region Obtention départ d'adresses
+            foreach (DataGridViewRow row in data.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Contains("Tab_M_R"))
+                    {
+                        ColumnIndex_Tab_M_R = cell.ColumnIndex + 1;
+                        RowIndex_Tab_M_R = cell.RowIndex + 2;
+                    }
+
+                    if (cell.Value.ToString().Contains("Tab_M_L"))
+                    {
+                        ColumnIndex_Tab_M_L = cell.ColumnIndex + 1;
+                        RowIndex_Tab_M_L = cell.RowIndex + 2;
+                    }
+
+                    if (cell.Value.ToString().Contains("Tab_M_ECR"))
+                    {
+                        ColumnIndex_Tab_M_ECR = cell.ColumnIndex + 1;
+                        RowIndex_Tab_M_ECR = cell.RowIndex + 2;
+                    }
+
+                    if (cell.Value.ToString().Contains("Tab_B_R"))
+                    {
+                        ColumnIndex_Tab_B_R = cell.ColumnIndex + 1;
+                        RowIndex_Tab_B_R = cell.RowIndex + 2;
+                    }
+
+                    if (cell.Value.ToString().Contains("Tab_B_L"))
+                    {
+                        ColumnIndex_Tab_B_L = cell.ColumnIndex + 1;
+                        RowIndex_Tab_B_L = cell.RowIndex + 2;
+                    }
+
+                    if (cell.Value.ToString().Contains("Tab_B_ECR"))
+                    {
+                        ColumnIndex_Tab_B_ECR = cell.ColumnIndex + 1;
+                        RowIndex_Tab_B_ECR = cell.RowIndex + 2;
+                    }
+
+
+                    //Obtention du nom de FB
+                    if (cell.Value.ToString().Contains("DFB :"))
+                        name = row.Cells[cell.ColumnIndex + 1].Value.ToString();
+                }
+            }
+            #endregion
+            #region Obtention quantité d'adresses à vérifier
+            log.Tab_M_R_AdressesCheck = new Dictionary<int, bool>(int.Parse(data.Rows[RowIndex_Tab_M_R - 2].Cells[ColumnIndex_Tab_M_R + 3].Value.ToString()));
+            int maxIndex_M_R = int.Parse(data.Rows[RowIndex_Tab_M_R - 2].Cells[ColumnIndex_Tab_M_R + 3].Value.ToString());
+            log.Tab_M_L_AdressesCheck = new Dictionary<int, bool>(int.Parse(data.Rows[RowIndex_Tab_M_L - 2].Cells[ColumnIndex_Tab_M_L + 3].Value.ToString()));
+            int maxIndex_M_L = int.Parse(data.Rows[RowIndex_Tab_M_R - 2].Cells[ColumnIndex_Tab_M_R + 3].Value.ToString());
+            #endregion
+
+
+
+            #region Vérification et ajout dans le log
+            FBtest = DFBs.FBSource.FirstOrDefault(x => x.nameOfFBType.ToUpper() == name.ToUpper().Replace(".XDB", "").ToUpper());
+            FBExchangeFileFBSourceVariables2 Desc_MR = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_MR");
+            FBExchangeFileFBSourceVariables2 Desc_ML = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_ML");
+            FBExchangeFileFBSourceVariables2 Desc_ME = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_ME");
+            FBExchangeFileFBSourceVariables2 Desc_BR = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_BR");
+            FBExchangeFileFBSourceVariables2 Desc_BL = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_BL");
+            FBExchangeFileFBSourceVariables2 Desc_BE = FBtest.publicLocalVariables.FirstOrDefault(x => x.name.ToUpper() == "DESC_BE");
+            #region Obtention requêtes et couverture adresses
+            FBExchangeFileFBSourceVariables2 Tab_Ordo_Rqt = FBtest.publicLocalVariables.FirstOrDefault(x => x.name == "Tab_Ordo_Rqt");
+            FBExchangeFileFBSourceVariables2 Desc_Rqt = FBtest.publicLocalVariables.FirstOrDefault(x => x.name == "Desc_Rqt");
+
+            foreach (FBExchangeFileFBSourceVariablesInstanceElementDesc inst in Tab_Ordo_Rqt.instanceElementDesc)
+            {
+                foreach (object o in inst.Items)
+                {
+                    int addr = 0;
+                    bool test = int.TryParse((string)o, out addr);
+                    if (test)
+                        RequetesUtilisee.Add(addr);
+                }
+
+            }
+            foreach (int i in RequetesUtilisee)
+            {
+                long min = 0;
+                long longueur = 0;
+                for (int u = 0; u < Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").ItemsElementName.Length; u++)
+                {
+                    if (Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").ItemsElementName[u] == ItemsChoiceType.instanceElementDesc)
+                    {
+                        FBExchangeFileFBSourceVariablesInstanceElementDescInstanceElementDesc inst2 = (FBExchangeFileFBSourceVariablesInstanceElementDescInstanceElementDesc)Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").Items[u];
+                        if (inst2.name == "Longueur")
+                        {
+                            longueur = long.Parse(inst2.value);
+                        }
+                    }
+                }
+
+                for (int u = 0; u < Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").ItemsElementName.Length; u++)
+                {
+                    if (Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").ItemsElementName[u] == ItemsChoiceType.instanceElementDesc)
+                    {
+                        FBExchangeFileFBSourceVariablesInstanceElementDescInstanceElementDesc inst2 = (FBExchangeFileFBSourceVariablesInstanceElementDescInstanceElementDesc)Desc_Rqt.instanceElementDesc.FirstOrDefault(x => x.name == "[" + i + "]").Items[u];
+                        if (inst2.name == "Adr_Mem")
+                        {
+                            if (inst2.value.ToString().Contains("16#"))
+                            {
+                                min = long.Parse(inst2.value.Replace("16#", ""), System.Globalization.NumberStyles.HexNumber);
+                            }
+                            else
+                            {
+                                min = long.Parse(inst2.value);
+                            }
+
+                            for (long y = min; y < min + longueur; y++)
+                            {
+                                AdressesCouvertes.Add(y);
+                            }
+
+                        }
+                    }
+                }
+
+
+            }
+            #endregion
+            if (FBtest != null)
+            {
+                VerifyMot(RowIndex_Tab_M_R, ColumnIndex_Tab_M_R, data, Desc_MR, log.Tab_M_R_AdressesCheck, log.Tab_M_R_RequestCheck, log.Tab_M_R_CorrespCheck,true);
+
+                VerifyMot(RowIndex_Tab_M_L, ColumnIndex_Tab_M_L, data, Desc_ML, log.Tab_M_L_AdressesCheck, log.Tab_M_L_RequestCheck, log.Tab_M_L_CorrespCheck, true);
+
+                VerifyMot(RowIndex_Tab_M_ECR, ColumnIndex_Tab_M_ECR, data, Desc_ME, log.Tab_M_ECR_AdressesCheck, log.Tab_M_ECR_RequestCheck, log.Tab_M_ECR_CorrespCheck, true);
+
+
+                #region Bits
+                VerifyBit(RowIndex_Tab_B_R, ColumnIndex_Tab_B_R, data, Desc_BR, log.Tab_B_R_AdressesCheck, log.Tab_B_R_RequestCheck, log.Tab_B_R_CorrespCheck, true);
+
+                VerifyBit(RowIndex_Tab_B_L, ColumnIndex_Tab_B_L, data, Desc_BL, log.Tab_B_L_AdressesCheck, log.Tab_B_L_RequestCheck, log.Tab_B_L_CorrespCheck, true);
+
+                VerifyBit(RowIndex_Tab_B_ECR, ColumnIndex_Tab_B_ECR, data, Desc_BE, log.Tab_B_ECR_AdressesCheck, log.Tab_B_ECR_RequestCheck, log.Tab_B_ECR_CorrespCheck, true);
+                #endregion
+
+                log.GenerateLogFile(name, int.Parse(data.Rows[RowIndex_Tab_M_R - 3].Cells[ColumnIndex_Tab_M_R - 1].Value.ToString().Replace(" Mots", "")),
+                    int.Parse(data.Rows[RowIndex_Tab_M_L - 3].Cells[ColumnIndex_Tab_M_L - 1].Value.ToString().Replace(" Mots", "")),
+                    int.Parse(data.Rows[RowIndex_Tab_M_ECR - 3].Cells[ColumnIndex_Tab_M_ECR - 1].Value.ToString().Replace(" Mots", "")),
+                    int.Parse(data.Rows[RowIndex_Tab_B_R - 3].Cells[ColumnIndex_Tab_B_R - 1].Value.ToString().Replace(" Bits", "")),
+                    int.Parse(data.Rows[RowIndex_Tab_B_L - 3].Cells[ColumnIndex_Tab_B_L - 1].Value.ToString().Replace(" Bits", ""))
+                    );
+
+
+            }
+            #endregion
+            /*}
+            catch (Exception)
+            {
+
+                MessageBox.Show("Impossible de trouver le dfb correspondant", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+
+
+        }
+
+        public static void VerifyMot(int RowIndex, int ColumnIndex, DataGridView data, FBExchangeFileFBSourceVariables2 Desc_Addr,Dictionary<int,bool> logTab, Dictionary<int, bool> logRequest,Dictionary<string,string> logCorresp,bool req)
+        {
+            //MR
+            int[] index = new int[6];
+            for (int i = RowIndex; i < RowIndex + int.Parse(data.Rows[RowIndex - 3].Cells[ColumnIndex - 1].Value.ToString().Replace(" Mots", "")); i++)
+            {
+                string excelAdresse = data.Rows[i].Cells[ColumnIndex].Value.ToString();
+                bool test = false;
+                int toto = 0;
+                test = int.TryParse(excelAdresse, out toto) || excelAdresse.Contains("16#");
+               
+                if (test)
+                {
+
+                    
+                    string excelMot = data.Rows[i].Cells[ColumnIndex - 2].Value.ToString().Replace("Mot ", "");
+                    if (!string.IsNullOrEmpty(data.Rows[i].Cells[ColumnIndex + 3].Value.ToString()))
+                    {
+                        //Adresse
+                        string adresse = "none";
+                        try
+                        {
+                            adresse = (string)Desc_Addr.instanceElementDesc[index[0]].Items[0];
+                        }
+                        catch (Exception)
+                        {
+
+
+                        }
+                        logCorresp.Add(excelAdresse, adresse);
+                        if (adresse.Equals(excelAdresse))
+                        {
+                            logTab.Add(int.Parse(excelMot), true);
+                            AdressesAVerif.Add(adresse);
+                        }
+                        else
+                        {
+                            logTab.Add(int.Parse(excelMot), false);
+
+                        }
+                        excelAdresse = excelAdresse.Replace("16#", "");
+                        if (req)
+                        {
+                            if (AdressesCouvertes.Contains(int.Parse(excelAdresse, System.Globalization.NumberStyles.HexNumber)) || AdressesCouvertes.Contains(int.Parse(excelAdresse)))
+                            {
+                                logRequest.Add(int.Parse(excelMot), true);
+                            }
+                            else
+                            {
+                                logRequest.Add(int.Parse(excelMot), false);
+                            }
+                        }
+                        
+
+                        
+                    }
+                    index[0]++;
+                }
+
+
+            }
+        }
+
+        public static void VerifyBit(int RowIndex, int ColumnIndex, DataGridView data, FBExchangeFileFBSourceVariables2 Desc_Addr, Dictionary<int, bool> logTab, Dictionary<int, bool> logRequest, Dictionary<string, string> logCorresp,bool req)
+        {
+            //MR
+            int[] index = new int[6];
+            for (int i = RowIndex; i < RowIndex + int.Parse(data.Rows[RowIndex - 3].Cells[ColumnIndex - 1].Value.ToString().Replace(" Bits", "")); i++)
+            {
+                
+                string excelAdresse = data.Rows[i].Cells[ColumnIndex].Value.ToString();
+                string rawAddr = excelAdresse;
+                if (excelAdresse.Contains("."))
+                    excelAdresse = excelAdresse.Substring(0, excelAdresse.IndexOf('.'));
+                bool test = false;
+                int toto = 0;
+                test = int.TryParse(excelAdresse, out toto) || excelAdresse.Contains("16#");
+                
+               
+                
+                int bit = 0;
+                bool Parsed = int.TryParse(rawAddr.Substring(rawAddr.LastIndexOf('.') + 1), out bit);
+                
+                if (test)
+                {
+
+
+                    string excelMot = data.Rows[i].Cells[ColumnIndex - 2].Value.ToString().Replace("Bit ", "");
+
+                    if (!string.IsNullOrEmpty(data.Rows[i].Cells[ColumnIndex + 3].Value.ToString()))
+                    {
+                        //Adresse
+                        string adresse = "none";
+                        try
+                        {
+                            adresse = (string)Desc_Addr.instanceElementDesc[index[0]].Items[0];
+                        }
+                        catch (Exception)
+                        {
+
+
+                        }
+                        if (rawAddr.Contains("."))
+                            logCorresp.Add(excelAdresse +"."+bit, adresse);
+                        else
+                        {
+                            try
+                            {
+                                logCorresp.Add(excelAdresse, adresse);
+                            }
+                            catch (Exception)
+                            {
+                                logCorresp.Add("Bit :"+excelMot, "Conflit d'adresses");
+
+                            }
+                        }
+                            
+                        long adresseConvert = 0;
+                        if(!excelAdresse.Contains("16#"))
+                            adresseConvert = int.Parse(excelAdresse) * 16 + bit;
+
+                        if (adresse.Equals(excelAdresse) ||adresse.Equals(adresseConvert.ToString()))
+                        {
+                            logTab.Add(int.Parse(excelMot), true);
+                            AdressesAVerif.Add(adresse);
+                        }
+                        else
+                        {
+                            logTab.Add(int.Parse(excelMot), false);
+
+                        }
+                        excelAdresse = excelAdresse.Replace("16#", "");
+                        if (req)
+                        {
+                            if (excelAdresse.Contains("16#"))
+                            {
+                                if (AdressesCouvertes.Contains(long.Parse(excelAdresse, System.Globalization.NumberStyles.HexNumber)) || AdressesCouvertes.Contains(adresseConvert))
+                                {
+                                    logRequest.Add(int.Parse(excelMot), true);
+                                }
+                                else
+                                {
+                                    logRequest.Add(int.Parse(excelMot), false);
+                                }
+                            }
+                            else
+                            {
+                                if (AdressesCouvertes.Contains(long.Parse(excelAdresse, System.Globalization.NumberStyles.HexNumber)) || AdressesCouvertes.Contains(long.Parse(excelAdresse)))
+                                {
+                                    logRequest.Add(int.Parse(excelMot), true);
+                                }
+                                else
+                                {
+                                    logRequest.Add(int.Parse(excelMot), false);
+                                }
+                            }
+                            
+                        }
+                        
+
+
+                    }
+                    index[0]++;
+                }
+
+
+            }
+        }
+    }
